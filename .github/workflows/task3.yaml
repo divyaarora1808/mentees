@@ -15,8 +15,14 @@ jobs:
       - name: Check out repo code
         uses: actions/checkout@v2
       - name: Install packages
-        run: cd Task3/client && npm ci
-      - name: Run lint
-        run: npm run lint
+        run: |
+          cd Task3
+          cd client
+          npm i
+          npm run lint
       - name: Lint all files
-        run: cd ../server && npm ci && npm run lint
+        run: |
+          cd Task3
+          cd server
+          npm i
+          npm run lint
